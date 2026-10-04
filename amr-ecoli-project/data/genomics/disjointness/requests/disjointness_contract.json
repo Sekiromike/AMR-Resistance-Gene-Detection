@@ -1,0 +1,61 @@
+{
+  "comparison": {
+    "aligned_fraction_rule": "minimum of development and external aligned fractions",
+    "compression_factor": 125,
+    "learned_ani_regression": true,
+    "marker_compression_factor": 1000,
+    "near_neighbor_min_ani_percent": 99.9,
+    "near_neighbor_min_reciprocal_aligned_fraction": 0.9,
+    "putative_duplicate_min_ani_percent": 99.99,
+    "putative_duplicate_min_reciprocal_aligned_fraction": 0.95,
+    "reported_value_rule": "compare the values emitted by skani 0.3.1; ANI and AF are reported to two decimal places",
+    "search_min_ani_percent": 95.0,
+    "search_min_reciprocal_aligned_fraction": 0.5,
+    "sensitivity_thresholds_reported": [
+      99.5,
+      99.9,
+      99.99
+    ],
+    "tool": "skani",
+    "version": "0.3.1"
+  },
+  "counts": {
+    "development_isolates": 10334,
+    "external_isolates": 3159,
+    "raw_read_runs": 3507,
+    "registered_assemblies": 9986
+  },
+  "generated_at_utc": "2026-08-25T03:45:04.202196+00:00",
+  "inputs": {
+    "development_enrichment": {
+      "path": "data\\source\\ncbi_isolate_enrichment\\20260821T012604Z-v1\\ncbi_isolate_enrichment.csv",
+      "sha256": "90881fbc1b61b8190692d48fdae607afba666f6f834a3f899a0153fa5c12cbdf"
+    },
+    "external_sequence_manifest": {
+      "path": "data\\source\\jarbs\\20260825T021722Z-v1\\jarbs_isolate_sequence_manifest.csv",
+      "sha256": "992a8a37c11d0b983fb90357b4ab61840892b11406f06f11a35170dc7f3227f1"
+    }
+  },
+  "operation": "freeze_genomic_disjointness_plan",
+  "outputs": {
+    "assembly_accessions": {
+      "path": "data\\genomics\\disjointness\\requests\\development_assembly_accessions.txt",
+      "sha256": "6ced57747028f52a76a2bbc4bf01d67bd995a51df1a2b3b5e79f447af4130746"
+    },
+    "raw_runs": {
+      "path": "data\\genomics\\disjointness\\requests\\raw_read_runs.txt",
+      "sha256": "54ff8fb6922019b8ce1e0886dac1d871b7e7bff7b1a97695580699bfc5f3503e"
+    },
+    "requests": {
+      "path": "data\\genomics\\disjointness\\requests\\sequence_requests.tsv",
+      "sha256": "8b2d2689ad3be1b8698783a94afcf3a0b9ec33f199c98353a1e90e28cee9408f"
+    }
+  },
+  "schema_version": "1.0.0",
+  "scientific_boundary": {
+    "cross_cohort_collision_policy": "unresolved collisions keep the external cohort unlocked",
+    "external_membership_available_to_model_selection": false,
+    "external_phenotypes_read": false,
+    "threshold_interpretation": "conservative leakage-control rule, not a universal biological species definition"
+  }
+}

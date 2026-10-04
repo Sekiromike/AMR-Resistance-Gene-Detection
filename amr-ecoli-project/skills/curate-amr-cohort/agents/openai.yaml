@@ -1,0 +1,4 @@
+interface:
+  display_name: "Curate AMR Cohort"
+  short_description: "Build traceable isolate-level AST cohorts"
+  default_prompt: "Use $curate-amr-cohort to curate and validate a quantitative E. coli AST cohort."

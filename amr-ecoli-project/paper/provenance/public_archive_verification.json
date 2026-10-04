@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "date": "2026-10-03",
+  "scope": "Extracted public result and embedding archives, verified their distributed checksums and original digest mappings, then recomputed all recorded evaluations, paired comparisons, subgroup readouts and withholding hypotheses.",
+  "counts": {
+    "evaluations": 54,
+    "comparison_files": 52,
+    "score_rows": 162,
+    "paired_comparison_rows": 438,
+    "source_exclusion_rows": 192,
+    "variant_rows": 7696,
+    "artifact_files": 591
+  },
+  "prediction_locks": 18,
+  "recorded_hashes_checked": 387,
+  "unavailable_hash_targets": 0,
+  "redacted_files": 15,
+  "numerical_prediction_files_unchanged": true
+}

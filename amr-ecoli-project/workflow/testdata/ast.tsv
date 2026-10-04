@@ -1,0 +1,15 @@
+Isolate	BioSample	Scientific name	Antibiotic	Resistance phenotype	MIC (mg/L)	Measurement sign	Laboratory typing method	Testing standard	Testing date
+PDT0001	SAMN00000001	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2021-01-02
+PDT0002	SAMN00000002	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2021-01-03
+PDT0003	SAMN00000003	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2021-01-04
+PDT0004	SAMN00000004	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2021-01-05
+PDT0005	SAMN00000005	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2021-01-06
+PDT0006	SAMN00000006	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2021-01-07
+PDT0007	SAMN00000007	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2021-01-08
+PDT0008	SAMN00000008	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2021-01-09
+PDT0009	SAMN00000009	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2021-01-10
+PDT0010	SAMN00000010	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2021-01-11
+PDT0011	SAMN00000011	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2022-01-02
+PDT0012	SAMN00000012	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2022-01-03
+PDT0013	SAMN00000013	Escherichia coli	ciprofloxacin	Susceptible	0.25	=	broth microdilution	EUCAST	2022-01-04
+PDT0014	SAMN00000014	Escherichia coli	ciprofloxacin	Resistant	4	=	broth microdilution	EUCAST	2022-01-05

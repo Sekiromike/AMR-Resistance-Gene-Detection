@@ -1,0 +1,7 @@
+stage,learner,difference,ci_low,ci_high,source
+Development,ridge,0.027479091995221028,0.010122683703229478,0.03779818839432845,results/comparisons/65016028/ridge_amr_evo2_human_clinical.json
+Development excluding source,ridge,-0.000702000702000702,-0.005662694746743953,0.002482277362460355,results/comparisons/65016028/ridge_amr_evo2_human_clinical.json
+Locked external,ridge,-0.03255813953488372,-0.05642348278107857,-0.01472043893699612,results/external/evaluation/65020832/comparison_ridge_censored_amr_evo2_human_clinical.json
+Development,xgboost,0.024193548387096774,0.000985713289383317,0.043488155515255464,results/comparisons/65016028/xgboost_amr_evo2_human_clinical.json
+Development excluding source,xgboost,-0.001755001755001755,-0.008231002037636343,0.0021557618813059874,results/comparisons/65016028/xgboost_amr_evo2_human_clinical.json
+Locked external,xgboost,-0.020598006644518274,-0.045845407926724,0.0,results/external/evaluation/65020832/comparison_xgboost_aft_amr_evo2_human_clinical.json

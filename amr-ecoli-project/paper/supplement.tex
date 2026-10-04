@@ -1,0 +1,607 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  10pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Supplementary results: curated resistance gene families and Evo 2},
+  pdfauthor={Rushath Rajeev},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Supplementary results: curated resistance gene families and Evo
+2}
+\author{Rushath Rajeev}
+\date{3 October 2026}
+
+\begin{document}
+\maketitle
+
+All values below were checked against the original completed-run
+predictions. EA is essential agreement against an interval-censored MIC
+reference; EA exact uses exact references only. Brackets give 95\%
+lineage-bootstrap intervals (2,000 draws, fixed predictions). Models
+with family features are post hoc. No model fitting was performed during
+manuscript verification.
+
+\section{S1. Locked external evaluation and exploratory family
+models}\label{s1.-locked-external-evaluation-and-exploratory-family-models}
+
+\subsection{Human clinical}\label{human-clinical}
+
+\subsubsection{Ceftriaxone}\label{ceftriaxone}
+
+All models: n = 1505; exact-reference n = 359.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.290 {[}0.121, 0.545{]} & 0.000 \\
+Nearest relative & 0.529 {[}0.415, 0.696{]} & 0.390 \\
+Ridge: allele & 0.680 {[}0.539, 0.742{]} & 0.237 \\
+Ridge: allele + Evo 2 & 0.684 {[}0.546, 0.748{]} & 0.315 \\
+Ridge: Evo 2 & 0.579 {[}0.465, 0.680{]} & 0.217 \\
+XGBoost: allele & 0.597 {[}0.480, 0.692{]} & 0.365 \\
+XGBoost: allele + Evo 2 & 0.612 {[}0.462, 0.695{]} & 0.421 \\
+XGBoost: Evo 2 & 0.541 {[}0.419, 0.649{]} & 0.415 \\
+Ridge: allele + family + class* & 0.771 {[}0.666, 0.817{]} & 0.365 \\
+XGBoost: allele + family + class* & 0.854 {[}0.784, 0.892{]} & 0.652 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Ciprofloxacin}\label{ciprofloxacin}
+
+All models: n = 1505; exact-reference n = 260.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.400 {[}0.213, 0.653{]} & 0.000 \\
+Nearest relative & 0.849 {[}0.769, 0.899{]} & 0.746 \\
+Ridge: allele & 0.932 {[}0.894, 0.950{]} & 0.681 \\
+Ridge: allele + Evo 2 & 0.908 {[}0.866, 0.929{]} & 0.662 \\
+Ridge: Evo 2 & 0.870 {[}0.820, 0.911{]} & 0.419 \\
+XGBoost: allele & 0.933 {[}0.913, 0.954{]} & 0.685 \\
+XGBoost: allele + Evo 2 & 0.935 {[}0.911, 0.955{]} & 0.708 \\
+XGBoost: Evo 2 & 0.923 {[}0.890, 0.943{]} & 0.650 \\
+Ridge: allele + family + class* & 0.904 {[}0.838, 0.948{]} & 0.496 \\
+XGBoost: allele + family + class* & 0.938 {[}0.918, 0.959{]} & 0.719 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Gentamicin}\label{gentamicin}
+
+All models: n = 1505; exact-reference n = 184.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.783 {[}0.703, 0.883{]} & 0.755 \\
+Nearest relative & 0.752 {[}0.667, 0.877{]} & 0.761 \\
+Ridge: allele & 0.887 {[}0.841, 0.916{]} & 0.239 \\
+Ridge: allele + Evo 2 & 0.854 {[}0.812, 0.873{]} & 0.087 \\
+Ridge: Evo 2 & 0.822 {[}0.777, 0.847{]} & 0.065 \\
+XGBoost: allele & 0.876 {[}0.829, 0.909{]} & 0.228 \\
+XGBoost: allele + Evo 2 & 0.856 {[}0.823, 0.873{]} & 0.087 \\
+XGBoost: Evo 2 & 0.824 {[}0.773, 0.848{]} & 0.092 \\
+Ridge: allele + family + class* & 0.880 {[}0.855, 0.904{]} & 0.179 \\
+XGBoost: allele + family + class* & 0.901 {[}0.871, 0.928{]} & 0.277 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsection{All sources}\label{all-sources}
+
+\subsubsection{Ceftriaxone}\label{ceftriaxone-1}
+
+All models: n = 1505; exact-reference n = 359.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.290 {[}0.121, 0.545{]} & 0.000 \\
+Nearest relative & 0.510 {[}0.383, 0.671{]} & 0.345 \\
+Ridge: allele & 0.705 {[}0.598, 0.759{]} & 0.362 \\
+Ridge: allele + Evo 2 & 0.701 {[}0.579, 0.756{]} & 0.443 \\
+Ridge: Evo 2 & 0.627 {[}0.502, 0.696{]} & 0.220 \\
+XGBoost: allele & 0.696 {[}0.593, 0.756{]} & 0.582 \\
+XGBoost: allele + Evo 2 & 0.678 {[}0.523, 0.746{]} & 0.518 \\
+XGBoost: Evo 2 & 0.583 {[}0.413, 0.686{]} & 0.457 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Ciprofloxacin}\label{ciprofloxacin-1}
+
+All models: n = 1505; exact-reference n = 260.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.400 {[}0.213, 0.653{]} & 0.000 \\
+Nearest relative & 0.847 {[}0.777, 0.894{]} & 0.665 \\
+Ridge: allele & 0.938 {[}0.888, 0.959{]} & 0.692 \\
+Ridge: allele + Evo 2 & 0.936 {[}0.911, 0.953{]} & 0.773 \\
+Ridge: Evo 2 & 0.900 {[}0.863, 0.923{]} & 0.588 \\
+XGBoost: allele & 0.944 {[}0.917, 0.960{]} & 0.723 \\
+XGBoost: allele + Evo 2 & 0.947 {[}0.924, 0.959{]} & 0.762 \\
+XGBoost: Evo 2 & 0.928 {[}0.879, 0.949{]} & 0.673 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Gentamicin}\label{gentamicin-1}
+
+All models: n = 1505; exact-reference n = 184.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.783 {[}0.703, 0.883{]} & 0.755 \\
+Nearest relative & 0.728 {[}0.645, 0.846{]} & 0.582 \\
+Ridge: allele & 0.890 {[}0.870, 0.905{]} & 0.217 \\
+Ridge: allele + Evo 2 & 0.889 {[}0.869, 0.904{]} & 0.217 \\
+Ridge: Evo 2 & 0.817 {[}0.766, 0.850{]} & 0.174 \\
+XGBoost: allele & 0.880 {[}0.862, 0.899{]} & 0.120 \\
+XGBoost: allele + Evo 2 & 0.877 {[}0.862, 0.895{]} & 0.092 \\
+XGBoost: Evo 2 & 0.839 {[}0.802, 0.860{]} & 0.098 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\section{S2. Final development out-of-fold
+evaluations}\label{s2.-final-development-out-of-fold-evaluations}
+
+\subsection{Human clinical}\label{human-clinical-1}
+
+\subsubsection{Ceftriaxone}\label{ceftriaxone-2}
+
+All models: n = 2822; exact-reference n = 157.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.721 {[}0.583, 0.866{]} & 0.000 \\
+Nearest relative & 0.692 {[}0.561, 0.833{]} & 0.057 \\
+Ridge: allele & 0.918 {[}0.889, 0.947{]} & 0.210 \\
+Ridge: allele + Evo 2 & 0.926 {[}0.901, 0.953{]} & 0.280 \\
+Ridge: Evo 2 & 0.895 {[}0.857, 0.936{]} & 0.159 \\
+XGBoost: allele & 0.929 {[}0.900, 0.957{]} & 0.490 \\
+XGBoost: allele + Evo 2 & 0.914 {[}0.884, 0.946{]} & 0.484 \\
+XGBoost: Evo 2 & 0.888 {[}0.851, 0.931{]} & 0.401 \\
+Ridge: allele + family + class* & 0.924 {[}0.900, 0.952{]} & 0.261 \\
+XGBoost: allele + family + class* & 0.933 {[}0.898, 0.964{]} & 0.535 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Ciprofloxacin}\label{ciprofloxacin-2}
+
+All models: n = 3809; exact-reference n = 647.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.599 {[}0.408, 0.826{]} & 0.481 \\
+Nearest relative & 0.566 {[}0.403, 0.765{]} & 0.371 \\
+Ridge: allele & 0.913 {[}0.891, 0.939{]} & 0.584 \\
+Ridge: allele + Evo 2 & 0.910 {[}0.888, 0.936{]} & 0.583 \\
+Ridge: Evo 2 & 0.884 {[}0.859, 0.911{]} & 0.512 \\
+XGBoost: allele & 0.918 {[}0.900, 0.940{]} & 0.628 \\
+XGBoost: allele + Evo 2 & 0.913 {[}0.891, 0.934{]} & 0.594 \\
+XGBoost: Evo 2 & 0.747 {[}0.537, 0.924{]} & 0.635 \\
+Ridge: allele + family + class* & 0.914 {[}0.894, 0.940{]} & 0.597 \\
+XGBoost: allele + family + class* & 0.917 {[}0.901, 0.934{]} & 0.611 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Gentamicin}\label{gentamicin-2}
+
+All models: n = 3348; exact-reference n = 440.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.823 {[}0.733, 0.923{]} & 0.791 \\
+Nearest relative & 0.813 {[}0.725, 0.909{]} & 0.820 \\
+Ridge: allele & 0.885 {[}0.866, 0.910{]} & 0.343 \\
+Ridge: allele + Evo 2 & 0.912 {[}0.894, 0.931{]} & 0.527 \\
+Ridge: Evo 2 & 0.882 {[}0.862, 0.907{]} & 0.457 \\
+XGBoost: allele & 0.894 {[}0.861, 0.931{]} & 0.441 \\
+XGBoost: allele + Evo 2 & 0.918 {[}0.901, 0.941{]} & 0.577 \\
+XGBoost: Evo 2 & 0.885 {[}0.853, 0.925{]} & 0.577 \\
+Ridge: allele + family + class* & 0.893 {[}0.870, 0.919{]} & 0.345 \\
+XGBoost: allele + family + class* & 0.895 {[}0.869, 0.927{]} & 0.368 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsection{All sources}\label{all-sources-1}
+
+\subsubsection{Ceftriaxone}\label{ceftriaxone-3}
+
+All models: n = 7097; exact-reference n = 830.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.767 {[}0.693, 0.843{]} & 0.020 \\
+Nearest relative & 0.657 {[}0.590, 0.726{]} & 0.142 \\
+Ridge: allele & 0.926 {[}0.914, 0.941{]} & 0.559 \\
+Ridge: allele + Evo 2 & 0.929 {[}0.916, 0.944{]} & 0.598 \\
+Ridge: Evo 2 & 0.871 {[}0.849, 0.899{]} & 0.252 \\
+XGBoost: allele & 0.942 {[}0.930, 0.954{]} & 0.736 \\
+XGBoost: allele + Evo 2 & 0.921 {[}0.902, 0.940{]} & 0.658 \\
+XGBoost: Evo 2 & 0.869 {[}0.845, 0.899{]} & 0.452 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Ciprofloxacin}\label{ciprofloxacin-3}
+
+All models: n = 8493; exact-reference n = 1156.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.747 {[}0.616, 0.864{]} & 0.398 \\
+Nearest relative & 0.645 {[}0.543, 0.741{]} & 0.385 \\
+Ridge: allele & 0.917 {[}0.904, 0.931{]} & 0.465 \\
+Ridge: allele + Evo 2 & 0.928 {[}0.916, 0.938{]} & 0.548 \\
+Ridge: Evo 2 & 0.911 {[}0.899, 0.924{]} & 0.437 \\
+XGBoost: allele & 0.933 {[}0.924, 0.944{]} & 0.587 \\
+XGBoost: allele + Evo 2 & 0.934 {[}0.924, 0.945{]} & 0.593 \\
+XGBoost: Evo 2 & 0.926 {[}0.913, 0.941{]} & 0.556 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\subsubsection{Gentamicin}\label{gentamicin-3}
+
+All models: n = 9514; exact-reference n = 5221.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Model & EA {[}95\% interval{]} & EA exact \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Constant & 0.811 {[}0.763, 0.858{]} & 0.919 \\
+Nearest relative & 0.727 {[}0.675, 0.775{]} & 0.759 \\
+Ridge: allele & 0.926 {[}0.905, 0.944{]} & 0.909 \\
+Ridge: allele + Evo 2 & 0.929 {[}0.913, 0.944{]} & 0.914 \\
+Ridge: Evo 2 & 0.884 {[}0.863, 0.908{]} & 0.890 \\
+XGBoost: allele & 0.932 {[}0.912, 0.948{]} & 0.908 \\
+XGBoost: allele + Evo 2 & 0.935 {[}0.921, 0.949{]} & 0.910 \\
+XGBoost: Evo 2 & 0.897 {[}0.875, 0.921{]} & 0.888 \\
+\end{longtable}
+}
+
+\emph{Family models were developed after inspection of the original
+external results.}
+
+\section{S3. Variant withholding: all carriers and above-panel
+carriers}\label{s3.-variant-withholding-all-carriers-and-above-panel-carriers}
+
+For each target, all its development carriers were withheld. EA uses all
+held-out carriers; the \textgreater2 mg/L share uses right-censored
+references only. The four primary CTX-M targets contribute 568
+target--isolate observations from 565 unique isolates and 45 lineages.
+
+\subsection{blaCMY-2}\label{blacmy-2}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 78 & 22 & 0.103 & 0.182 \\
+Ridge / allele + Evo 2 & 78 & 22 & 0.115 & 0.182 \\
+Ridge / evo2 & 78 & 22 & 0.179 & 0.227 \\
+Ridge / allele + family + class & 78 & 22 & 0.487 & 0.773 \\
+XGBoost / allele & 78 & 22 & 0.103 & 0.182 \\
+XGBoost / allele + Evo 2 & 78 & 22 & 0.231 & 0.318 \\
+XGBoost / evo2 & 78 & 22 & 0.385 & 0.591 \\
+XGBoost / allele + family + class & 78 & 22 & 0.256 & 0.727 \\
+\end{longtable}
+}
+
+\subsection{blaCTX-M-14}\label{blactx-m-14}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 47 & 37 & 0.043 & 0.054 \\
+Ridge / allele + Evo 2 & 47 & 37 & 0.064 & 0.189 \\
+Ridge / evo2 & 47 & 37 & 0.511 & 0.973 \\
+Ridge / allele + family + class & 47 & 37 & 0.894 & 1.000 \\
+XGBoost / allele & 47 & 37 & 0.064 & 0.027 \\
+XGBoost / allele + Evo 2 & 47 & 37 & 0.149 & 0.676 \\
+XGBoost / evo2 & 47 & 37 & 0.447 & 1.000 \\
+XGBoost / allele + family + class & 47 & 37 & 0.936 & 1.000 \\
+\end{longtable}
+}
+
+\subsection{blaCTX-M-15}\label{blactx-m-15}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 410 & 361 & 0.076 & 0.080 \\
+Ridge / allele + Evo 2 & 410 & 361 & 0.076 & 0.235 \\
+Ridge / evo2 & 410 & 361 & 0.644 & 0.922 \\
+Ridge / allele + family + class & 410 & 361 & 0.763 & 0.972 \\
+XGBoost / allele & 410 & 361 & 0.029 & 0.042 \\
+XGBoost / allele + Evo 2 & 410 & 361 & 0.098 & 0.687 \\
+XGBoost / evo2 & 410 & 361 & 0.439 & 0.859 \\
+XGBoost / allele + family + class & 410 & 361 & 0.910 & 1.000 \\
+\end{longtable}
+}
+
+\subsection{blaCTX-M-27}\label{blactx-m-27}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 170 & 134 & 0.047 & 0.022 \\
+Ridge / allele + Evo 2 & 170 & 134 & 0.135 & 0.575 \\
+Ridge / evo2 & 170 & 134 & 0.647 & 0.948 \\
+Ridge / allele + family + class & 170 & 134 & 0.776 & 1.000 \\
+XGBoost / allele & 170 & 134 & 0.041 & 0.022 \\
+XGBoost / allele + Evo 2 & 170 & 134 & 0.071 & 0.791 \\
+XGBoost / evo2 & 170 & 134 & 0.576 & 0.910 \\
+XGBoost / allele + family + class & 170 & 134 & 0.918 & 1.000 \\
+\end{longtable}
+}
+
+\subsection{blaCTX-M-55}\label{blactx-m-55}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 39 & 36 & 0.051 & 0.111 \\
+Ridge / allele + Evo 2 & 39 & 36 & 0.103 & 0.194 \\
+Ridge / evo2 & 39 & 36 & 0.872 & 1.000 \\
+Ridge / allele + family + class & 39 & 36 & 0.744 & 1.000 \\
+XGBoost / allele & 39 & 36 & 0.000 & 0.056 \\
+XGBoost / allele + Evo 2 & 39 & 36 & 0.231 & 0.861 \\
+XGBoost / evo2 & 39 & 36 & 0.744 & 1.000 \\
+XGBoost / allele + family + class & 39 & 36 & 0.949 & 1.000 \\
+\end{longtable}
+}
+
+\subsection{blaOXA-1}\label{blaoxa-1}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrrr@{}}
+\toprule\noalign{}
+Learner / features & Held out & Above panel & EA & \textgreater2 mg/L
+share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ridge / allele & 218 & 174 & 0.862 & 0.994 \\
+Ridge / allele + Evo 2 & 218 & 174 & 0.858 & 0.994 \\
+Ridge / evo2 & 218 & 174 & 0.844 & 0.994 \\
+Ridge / allele + family + class & 218 & 174 & 0.858 & 0.994 \\
+XGBoost / allele & 218 & 174 & 0.899 & 0.994 \\
+XGBoost / allele + Evo 2 & 218 & 174 & 0.881 & 0.994 \\
+XGBoost / evo2 & 218 & 174 & 0.748 & 0.994 \\
+XGBoost / allele + family + class & 218 & 174 & 0.881 & 0.994 \\
+\end{longtable}
+}
+
+\section{S4. Numerical convergence and computational
+provenance}\label{s4.-numerical-convergence-and-computational-provenance}
+
+The bounded ridge development rerun recorded the following nonconverged
+fits, counting inner selection and outer final fits together. These
+counts do not imply that every selected final fit failed to converge.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llr@{}}
+\toprule\noalign{}
+Population & Features & Nonconverged / total fits \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+human clinical & Allele & 0 / 435 \\
+human clinical & Evo 2 & 0 / 1275 \\
+human clinical & Allele + Evo 2 & 20 / 1275 \\
+all sources & Allele & 0 / 435 \\
+all sources & Evo 2 & 15 / 1275 \\
+all sources & Allele + Evo 2 & 57 / 1275 \\
+\end{longtable}
+}
+
+For final external prediction (including development-fold selection),
+the corresponding counts were 7/318 for human-clinical allele + Evo 2,
+16/318 for all-source allele + Evo 2, and 3/318 for all-source Evo 2.
+All other external ridge configurations and both family ridge runs
+recorded zero nonconverged fits. Full per-fold settings and messages are
+in \texttt{selected\_settings.csv}.
+
+Production embedding extraction used four completed H100 tasks, with
+recorded wall times totaling approximately 3.6 GPU-hours. Software
+versions and the 64 embedding-shard checksums accompany the release.
+This count excludes training the foundation model, CPU modelling, genome
+processing, engineering attempts, and transfers.
+
+\section{Machine-readable
+supplements}\label{machine-readable-supplements}
+
+The release includes \texttt{full\_external.csv},
+\texttt{final\_development.csv}, \texttt{all\_evaluations.csv}
+(including superseded development runs, identified by run path),
+\texttt{reference\_and\_lineage\_strata.csv},
+\texttt{paired\_comparisons.csv}, \texttt{source\_sensitivity.csv},
+\texttt{variant\_results.csv}, and \texttt{selected\_settings.csv}.
+Source exclusions re-evaluate existing out-of-fold predictions without
+retraining. No clinical S/I/R, clinical very-major-error, independent
+replication, or laboratory-validation result is claimed.
+
+\end{document}

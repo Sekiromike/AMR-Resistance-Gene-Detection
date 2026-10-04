@@ -1,0 +1,21 @@
+{
+  "tag_name": "v1.0.0",
+  "html_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/tag/v1.0.0",
+  "status": "Refreshing code and paper packages after the owner-requested repository cleanup. Numerical result and embedding archives remain unchanged.",
+  "unchanged_scientific_assets": [
+    {
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-embeddings-v1.0.0.tar.gz",
+      "digest": "sha256:9e8a347c87a7d40eacda1438704f31ff43fbe576ee258f936002fe4fe48099a5",
+      "name": "amr-embeddings-v1.0.0.tar.gz",
+      "size": 1455914306,
+      "state": "uploaded"
+    },
+    {
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-results-v1.0.0.tar.gz",
+      "digest": "sha256:31e2e72525959aec48e5a5e78475302433b3551f28c52515027ad521f3552096",
+      "name": "amr-results-v1.0.0.tar.gz",
+      "size": 238385121,
+      "state": "uploaded"
+    }
+  ]
+}

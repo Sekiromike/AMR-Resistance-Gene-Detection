@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0-test",
+  "config_path": "workflow/testdata/config.json",
+  "study_id": "workflow-contract-test",
+  "organism": {
+    "name": "Escherichia coli",
+    "ncbi_taxonomy_id": 562
+  },
+  "primary_antibiotics": ["ciprofloxacin"],
+  "ast": {
+    "interpretation_standard": "EUCAST",
+    "breakpoint_version": "16.1",
+    "breakpoint_table": "workflow/testdata/breakpoints.csv",
+    "breakpoint_table_sha256": "a30b5cdaf34360a8262031d2a7f92f81f3c008038d47fd099531ed7d6f658aab",
+    "breakpoint_rules": "workflow/testdata/breakpoint_rules.csv"
+  },
+  "inputs": {
+    "ncbi_ast_export": "workflow/testdata/ast.tsv",
+    "ncbi_isolates_export": "workflow/testdata/isolates.tsv",
+    "breakpoint_rules": "workflow/testdata/breakpoint_rules.csv",
+    "breakpoint_artifact": "workflow/testdata/breakpoints.csv",
+    "isolate_metadata": "workflow/testdata/isolate_metadata.csv"
+  },
+  "outputs": {
+    "normalized_ast": "workflow/test-output/ncbi_ast_normalized.csv",
+    "ast_exclusions": "workflow/test-output/ncbi_ast_exclusions.csv",
+    "ast_manifest": "workflow/test-output/ncbi_ast_manifest.json",
+    "interpreted_ast": "workflow/test-output/ast_interpreted.csv",
+    "breakpoint_exclusions": "workflow/test-output/breakpoint_exclusions.csv",
+    "breakpoint_manifest": "workflow/test-output/breakpoint_manifest.json",
+    "curated_cohort": "workflow/test-output/cohort.csv",
+    "cohort_exclusions": "workflow/test-output/cohort_exclusions.csv",
+    "cohort_manifest": "workflow/test-output/cohort_manifest.json",
+    "cohort_validation": "workflow/test-output/cohort_validation.json",
+    "split_table": "workflow/test-output/isolate_splits.csv",
+    "split_manifest": "workflow/test-output/split_manifest.json",
+    "prevalence_predictions": "workflow/test-output/prevalence.csv",
+    "prevalence_manifest": "workflow/test-output/prevalence_manifest.json",
+    "locked_thresholds": "workflow/test-output/locked_thresholds.csv",
+    "external_metrics": "workflow/test-output/external_metrics.csv",
+    "evaluation_manifest": "workflow/test-output/evaluation_manifest.json"
+  },
+  "splitting": {
+    "folds": 4,
+    "seed": 7,
+    "group": "genomic_cluster"
+  },
+  "evaluation": {
+    "intermediate_policy": "exclude_with_flow_report",
+    "minimum_validation_sensitivity": 0.9,
+    "cluster_bootstrap_iterations": 200,
+    "seed": 9
+  },
+  "genomics": {
+    "enabled": false
+  },
+  "testing": {
+    "allow_unverified_ast_input": true
+  },
+  "unity": {
+    "work_root": "/work/<allocation>/<username>"
+  }
+}

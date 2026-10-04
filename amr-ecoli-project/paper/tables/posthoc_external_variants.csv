@@ -1,0 +1,9 @@
+features,learner,n,share,common_n,common_share,evidence_tier,source
+allele,ridge,102,0.14705882352941177,546,0.9981684981684982,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+amr+evo2,ridge,102,0.19607843137254902,546,0.9963369963369964,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+evo2,ridge,102,0.7843137254901961,546,0.9065934065934066,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+family,ridge,102,0.9901960784313726,546,1.0,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+allele,xgboost,102,0.12745098039215685,546,1.0,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+amr+evo2,xgboost,102,0.46078431372549017,546,0.9816849816849816,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+evo2,xgboost,102,0.8137254901960784,546,0.9633699633699634,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json
+family,xgboost,102,0.9901960784313726,546,1.0,posthoc_external,results/posthoc/family/65022960/scoring-65023163/unseen_variants.json

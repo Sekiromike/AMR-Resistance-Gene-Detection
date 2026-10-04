@@ -1,0 +1,204 @@
+"""Publication-oriented cohort gate and locked baseline workflow."""
+
+configfile: "config/study.json"
+
+INPUTS = config["inputs"]
+OUTPUTS = config["outputs"]
+SPLITTING = config["splitting"]
+EVALUATION = config["evaluation"]
+STUDY_CONFIG = config["config_path"]
+GENOMICS_ENABLED = config.get("genomics", {}).get("enabled", False)
+ALLOW_UNVERIFIED_AST_INPUT = config.get("testing", {}).get(
+    "allow_unverified_ast_input", False
+)
+NORMALIZATION_PROVENANCE_ARG = (
+    "--allow-unverified-input" if ALLOW_UNVERIFIED_AST_INPUT else ""
+)
+BREAKPOINT_PROVENANCE_ARG = (
+    "--allow-unverified-normalization" if ALLOW_UNVERIFIED_AST_INPUT else ""
+)
+
+if GENOMICS_ENABLED:
+    include: "rules/genomics.smk"
+
+
+ALL_OUTPUTS = [
+    OUTPUTS["ast_manifest"],
+    OUTPUTS["breakpoint_manifest"],
+    OUTPUTS["cohort_manifest"],
+    OUTPUTS["cohort_validation"],
+    OUTPUTS["split_manifest"],
+    OUTPUTS["prevalence_manifest"],
+    OUTPUTS["evaluation_manifest"],
+]
+if GENOMICS_ENABLED:
+    ALL_OUTPUTS.append(GENOMICS_FINAL_MANIFEST)
+
+COHORT_GENOME_INPUT = GENOMICS_FINAL_TABLE if GENOMICS_ENABLED else []
+COHORT_GENOME_ARG = (
+    f"--genome-manifest {GENOMICS_FINAL_TABLE}" if GENOMICS_ENABLED else ""
+)
+
+
+rule all:
+    input:
+        ALL_OUTPUTS
+
+
+rule normalize_ncbi_ast:
+    input:
+        ast=INPUTS["ncbi_ast_export"],
+        isolates=INPUTS["ncbi_isolates_export"],
+        country_vocabulary="config/insdc_geo_loc_name_vocabulary.tsv",
+    output:
+        normalized=OUTPUTS["normalized_ast"],
+        exclusions=OUTPUTS["ast_exclusions"],
+        manifest=OUTPUTS["ast_manifest"],
+    threads: 1
+    resources:
+        mem_mb=8000,
+        runtime=60,
+    conda:
+        "envs/core.yaml"
+    params:
+        provenance_arg=NORMALIZATION_PROVENANCE_ARG,
+    shell:
+        "python scripts/normalize_ncbi_ast.py "
+        "--ast {input.ast:q} --isolates {input.isolates:q} "
+        "--output {output.normalized:q} --exclusions {output.exclusions:q} "
+        "--manifest {output.manifest:q} --country-vocabulary {input.country_vocabulary:q} "
+        "{params.provenance_arg}"
+
+
+rule apply_frozen_breakpoints:
+    input:
+        ast=OUTPUTS["normalized_ast"],
+        normalization_manifest=OUTPUTS["ast_manifest"],
+        rules=INPUTS["breakpoint_rules"],
+        artifact=INPUTS["breakpoint_artifact"],
+        context=INPUTS["isolate_metadata"],
+    output:
+        interpreted=OUTPUTS["interpreted_ast"],
+        exclusions=OUTPUTS["breakpoint_exclusions"],
+        manifest=OUTPUTS["breakpoint_manifest"],
+    threads: 1
+    resources:
+        mem_mb=4000,
+        runtime=30,
+    conda:
+        "envs/core.yaml"
+    params:
+        provenance_arg=BREAKPOINT_PROVENANCE_ARG,
+    shell:
+        "python scripts/apply_breakpoints.py --ast {input.ast:q} "
+        "--normalization-manifest {input.normalization_manifest:q} "
+        "--rules {input.rules:q} --breakpoint-artifact {input.artifact:q} "
+        "--context-metadata {input.context:q} "
+        "--output {output.interpreted:q} --exclusions {output.exclusions:q} "
+        "--manifest {output.manifest:q} {params.provenance_arg}"
+
+
+rule construct_research_cohort:
+    input:
+        ast=OUTPUTS["interpreted_ast"],
+        metadata=INPUTS["isolate_metadata"],
+        genome=COHORT_GENOME_INPUT,
+    output:
+        cohort=OUTPUTS["curated_cohort"],
+        exclusions=OUTPUTS["cohort_exclusions"],
+        manifest=OUTPUTS["cohort_manifest"],
+    threads: 1
+    resources:
+        mem_mb=4000,
+        runtime=30,
+    conda:
+        "envs/core.yaml"
+    params:
+        genome_arg=COHORT_GENOME_ARG,
+    shell:
+        "python scripts/construct_research_cohort.py "
+        "--interpreted-ast {input.ast:q} --isolate-metadata {input.metadata:q} "
+        "{params.genome_arg} "
+        "--output {output.cohort:q} --exclusions {output.exclusions:q} "
+        "--manifest {output.manifest:q}"
+
+
+rule validate_curated_cohort:
+    input:
+        cohort=OUTPUTS["curated_cohort"],
+        rules=INPUTS["breakpoint_rules"],
+        artifact=INPUTS["breakpoint_artifact"],
+    output:
+        report=OUTPUTS["cohort_validation"],
+    threads: 1
+    resources:
+        mem_mb=4000,
+        runtime=30,
+    conda:
+        "envs/core.yaml"
+    shell:
+        "python scripts/validate_research_cohort.py "
+        "--cohort {input.cohort:q} --report {output.report:q} "
+        "--study-config {STUDY_CONFIG:q} --breakpoint-rules {input.rules:q} "
+        "--breakpoint-artifact {input.artifact:q}"
+
+
+rule build_split_manifest:
+    input:
+        cohort=OUTPUTS["curated_cohort"],
+        validation=OUTPUTS["cohort_validation"],
+    output:
+        splits=OUTPUTS["split_table"],
+        manifest=OUTPUTS["split_manifest"],
+    threads: 1
+    resources:
+        mem_mb=4000,
+        runtime=30,
+    conda:
+        "envs/core.yaml"
+    shell:
+        "python scripts/build_split_manifest.py --cohort {input.cohort:q} "
+        "--output {output.splits:q} --manifest {output.manifest:q} "
+        "--folds {SPLITTING[folds]} --seed {SPLITTING[seed]}"
+
+
+rule prevalence_baseline:
+    input:
+        cohort=OUTPUTS["curated_cohort"],
+        splits=OUTPUTS["split_table"],
+    output:
+        predictions=OUTPUTS["prevalence_predictions"],
+        manifest=OUTPUTS["prevalence_manifest"],
+    threads: 1
+    resources:
+        mem_mb=4000,
+        runtime=30,
+    conda:
+        "envs/core.yaml"
+    shell:
+        "python scripts/run_prevalence_baseline.py --cohort {input.cohort:q} "
+        "--splits {input.splits:q} --output {output.predictions:q} "
+        "--manifest {output.manifest:q} "
+        "--intermediate-policy {EVALUATION[intermediate_policy]}"
+
+
+rule evaluate_prevalence_baseline:
+    input:
+        predictions=OUTPUTS["prevalence_predictions"],
+    output:
+        thresholds=OUTPUTS["locked_thresholds"],
+        metrics=OUTPUTS["external_metrics"],
+        manifest=OUTPUTS["evaluation_manifest"],
+    threads: 1
+    resources:
+        mem_mb=8000,
+        runtime=120,
+    conda:
+        "envs/core.yaml"
+    shell:
+        "python scripts/evaluate_predictions.py --predictions {input.predictions:q} "
+        "--thresholds {output.thresholds:q} --metrics {output.metrics:q} "
+        "--manifest {output.manifest:q} "
+        "--min-sensitivity {EVALUATION[minimum_validation_sensitivity]} "
+        "--bootstrap-iterations {EVALUATION[cluster_bootstrap_iterations]} "
+        "--seed {EVALUATION[seed]}"

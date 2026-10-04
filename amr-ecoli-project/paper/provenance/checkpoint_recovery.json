@@ -1,0 +1,7 @@
+{
+  "model": "arcinstitute/evo2_20b",
+  "cached_revision_observed": "8b0f0a9a70c66367ed181a17d049b95699a28fed",
+  "observed_date": "2026-10-03",
+  "method": "Read the existing Unity Hugging Face cache refs/main; no weights changed or re-downloaded.",
+  "limitation": "Production run manifests recorded model name and software versions, but did not record a checkpoint-content hash. The recovered cache reference is supplementary provenance, not an independently logged run-time hash. Released embedding shards retain their original checksums."
+}

@@ -1,0 +1,7 @@
+# mlst is perl-based and cannot share an environment with quast.
+name: amr-genomics-mlst
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - mlst=2.35.0

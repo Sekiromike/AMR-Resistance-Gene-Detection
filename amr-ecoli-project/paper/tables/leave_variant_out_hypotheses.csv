@@ -1,0 +1,5 @@
+learner,comparison,difference,ci_low,ci_high,n_target_isolate_observations,n_unique_isolates,evidence_tier,source
+ridge,family_minus_evo2,0.045774647887323945,0.02267461440021553,0.12139127518921851,568,565,development_variant_withholding,results/leave-variant-out/65051616/readout.json
+ridge,family_minus_allele,0.9154929577464789,0.836048080767693,0.9432043346521038,568,565,development_variant_withholding,results/leave-variant-out/65051616/readout.json
+xgboost,family_minus_evo2,0.11091549295774648,0.07358593568833578,0.22069962467745713,568,565,development_variant_withholding,results/leave-variant-out/65051616/readout.json
+xgboost,family_minus_allele,0.9630281690140845,0.9164348827851548,0.9813957811014091,568,565,development_variant_withholding,results/leave-variant-out/65051616/readout.json

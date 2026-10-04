@@ -1,0 +1,69 @@
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Credentials and machine-local configuration
+*.key
+*.pem
+*.p12
+*.pfx
+*credentials*.json
+*service-account*.json
+.secrets/
+config/*.local.env
+config/*.local.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+data/features/
+data/phenotype/
+data/source/
+data/interim/
+data/curated/
+data/reference/
+data/splits/
+
+# Models
+models/
+
+# Generated figures
+figures/
+
+# Generated validation reports
+reports/
+results/
+logs/
+provenance/
+.snakemake/
+workflow/test-output/
+
+# Local exploratory artifacts; canonical tests live under tests/
+/fix_notebook.py
+/test_*.py
+/test.zip
+/unnamed.jpg
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Manuscript outputs are versioned; raw verification copies and release bundles
+# are distributed separately as release assets.
+!paper/figures/
+!paper/figures/**
+!paper/provenance/
+!paper/provenance/**
+paper/artifacts/
+paper/release/
+paper/tex-build/

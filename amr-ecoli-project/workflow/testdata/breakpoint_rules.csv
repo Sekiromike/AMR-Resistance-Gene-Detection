@@ -1,0 +1,2 @@
+breakpoint_rule_id,breakpoint_artifact_sha256,breakpoint_standard,breakpoint_version,antibiotic,ast_measurement_type,ast_unit,susceptible_breakpoint,resistant_breakpoint,ast_method,disk_content,clinical_indication
+TEST-EUCAST-16.1-CIP-MIC,a30b5cdaf34360a8262031d2a7f92f81f3c008038d47fd099531ed7d6f658aab,EUCAST,16.1,ciprofloxacin,MIC,mg/L,0.25,0.5,broth microdilution,,non_meningitis

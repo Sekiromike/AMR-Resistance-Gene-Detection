@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this research software and its accompanying preprint."
+title: "Curated resistance gene families outperform Evo 2 embeddings on unseen variants in Escherichia coli"
+authors:
+  - family-names: Rajeev
+    given-names: Rushath
+    affiliation: Independent researcher
+    email: rushathrajeevav@gmail.com
+version: 1.0.0
+date-released: 2026-10-04
+license: MIT
+repository-code: "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection"
+url: "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/tag/v1.0.0"
+keywords:
+  - antimicrobial resistance
+  - Escherichia coli
+  - Evo 2
+  - minimum inhibitory concentration

@@ -1,0 +1,7 @@
+sequence_id	cohort	isolate_id	biosample_accession	source_type	sequence_accession	expected_read_md5
+development::PDT000041778.1	development	PDT000041778.1	SAMN03075588	registered_assembly	GCA_000770275.1	
+development::PDT000041780.1	development	PDT000041780.1	SAMN03075589	registered_assembly	GCA_000770285.1	
+development::PDT000095190.3	development	PDT000095190.3	SAMN04279649	raw_reads	SRR2927307	
+development::PDT000095191.3	development	PDT000095191.3	SAMN04279650	raw_reads	SRR2927308	
+external::JBABADA-19-0001	external	JBABADA-19-0001	SAMD00497401	raw_reads	DRR385905	88950b8e683f7a316f54d67867681b51
+external::JBABADA-19-0002	external	JBABADA-19-0002	SAMD00497402	raw_reads	DRR385906	02b472e0760b03e1e6f687ac549ed43b

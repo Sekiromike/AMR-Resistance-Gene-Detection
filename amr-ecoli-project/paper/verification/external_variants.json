@@ -1,0 +1,67 @@
+{
+  "common_variants": [
+    "blaCTX-M-14",
+    "blaCTX-M-15",
+    "blaCTX-M-27",
+    "blaCTX-M-55"
+  ],
+  "post_hoc": true,
+  "results": {
+    "ridge_allele": {
+      "common_n": 546,
+      "common_resistant_side": 0.9981684981684982,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.14705882352941177
+    },
+    "ridge_amr_evo2": {
+      "common_n": 546,
+      "common_resistant_side": 0.9963369963369964,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.19607843137254902
+    },
+    "ridge_evo2": {
+      "common_n": 546,
+      "common_resistant_side": 0.9065934065934066,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.7843137254901961
+    },
+    "ridge_family": {
+      "common_n": 546,
+      "common_resistant_side": 1.0,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.9901960784313726
+    },
+    "xgboost_allele": {
+      "common_n": 546,
+      "common_resistant_side": 1.0,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.12745098039215685
+    },
+    "xgboost_amr_evo2": {
+      "common_n": 546,
+      "common_resistant_side": 0.9816849816849816,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.46078431372549017
+    },
+    "xgboost_evo2": {
+      "common_n": 546,
+      "common_resistant_side": 0.9633699633699634,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.8137254901960784
+    },
+    "xgboost_family": {
+      "common_n": 546,
+      "common_resistant_side": 1.0,
+      "unseen_n": 102,
+      "unseen_resistant_side": 0.9901960784313726
+    }
+  },
+  "unseen_variants": [
+    "blaCTX-M-2",
+    "blaCTX-M-8",
+    "blaCTX-M-3",
+    "blaCTX-M-24",
+    "blaCTX-M-65",
+    "blaIMP-1"
+  ]
+}

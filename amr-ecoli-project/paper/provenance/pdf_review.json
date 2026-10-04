@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-03",
+  "compiler": "Tectonic 0.17.0 (XeTeX)",
+  "manuscript_pages": 13,
+  "supplement_pages": 7,
+  "figures": 3,
+  "checks": [
+    "Title, author, affiliation and correspondence inspected",
+    "Main scientific figure page and supplementary table page visually inspected",
+    "Missing inequality glyphs corrected and compilation repeated",
+    "Duplicate figure-caption prefixes corrected",
+    "No missing-character or overfull-box warning in compiled manuscript/supplement logs"
+  ],
+  "boundary": "The author must review the scientific text and the PDF produced by arXiv; no arXiv upload has occurred.",
+  "cleanup_rebuild": {
+    "date": "2026-10-04",
+    "change": "Removed one sentence about excluded predecessor experiments; retained original vector figures.",
+    "checks": [
+      "Actual manuscript and supplement LaTeX recompiled",
+      "Manuscript 13 pages and supplement 7 pages",
+      "No missing-character or overfull-box warnings"
+    ]
+  }
+}

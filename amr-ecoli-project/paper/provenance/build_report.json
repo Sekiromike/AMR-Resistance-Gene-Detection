@@ -1,0 +1,14 @@
+{
+  "html_pdf_pages": 14,
+  "pandoc": "3.9",
+  "matplotlib": "3.11.2",
+  "weasyprint": "70.0",
+  "latex_compiled": true,
+  "raw_predictions_recomputed": true,
+  "tables_checked": 9,
+  "figures": 3,
+  "references": 8,
+  "manuscript_pdf_pages": 13,
+  "supplement_pdf_pages": 7,
+  "tectonic": "Tectonic 0.17.0"
+}

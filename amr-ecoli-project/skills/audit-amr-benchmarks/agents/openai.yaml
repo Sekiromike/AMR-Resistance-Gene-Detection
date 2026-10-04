@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit AMR Benchmarks"
+  short_description: "Review leakage, validity, and AMR evidence"
+  default_prompt: "Use $audit-amr-benchmarks to audit this AMR benchmark before accepting any scientific claim."

@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.1.0",
+  "config_path": "config/study.json",
+  "study_id": "amr-ecoli-g2p-2026",
+  "organism": {
+    "name": "Escherichia coli",
+    "ncbi_taxonomy_id": 562
+  },
+  "primary_antibiotics": [
+    "ciprofloxacin",
+    "ceftriaxone",
+    "gentamicin"
+  ],
+  "primary_endpoint": "mic_regression",
+  "population": {
+    "primary": "human_clinical",
+    "sensitivity": "all_sources",
+    "amendment": "docs/COUNTRY_AND_POPULATION_AMENDMENT.md"
+  },
+  "country_vocabulary": {
+    "path": "config/insdc_geo_loc_name_vocabulary.tsv",
+    "sha256": "f8a9e6fa7338bf5241ec168bffd44d0a7fffd5a123b37c47d872d1e14db1bfcf",
+    "source": "https://www.insdc.org/submitting-standards/geo_loc_name-qualifier-vocabulary/",
+    "revised": "2024-07-08",
+    "retrieved": "2026-09-23"
+  },
+  "mic": {
+    "target": "log2_mic",
+    "censoring": "interval",
+    "agreement_tolerance_doubling_dilutions": 1,
+    "amendment": "docs/ENDPOINT_AMENDMENT.md"
+  },
+  "secondary_endpoint": {
+    "type": "categorical_sir",
+    "status": "BLOCKED_PENDING_EUCAST_REVIEW_AND_ASSAY_METADATA",
+    "amendment": "docs/ENDPOINT_AMENDMENT.md",
+    "antibiotic_endpoints": {
+      "ciprofloxacin": {
+        "clinical_indication": "non_meningitis"
+      },
+      "ceftriaxone": {
+        "clinical_indication": "non_meningitis"
+      },
+      "gentamicin": {
+        "clinical_indication": "urinary_tract"
+      }
+    }
+  },
+  "ast": {
+    "interpretation_standard": "EUCAST",
+    "breakpoint_version": "16.1",
+    "valid_from": "2026-06-24",
+    "valid_until": "2026-12-31",
+    "breakpoint_source_url": "https://www.eucast.org/bacteria/clinical-breakpoints-and-interpretation/clinical-breakpoint-tables/",
+    "breakpoint_table": "data/reference/EUCAST_v16.1_Breakpoint_Tables.xlsx",
+    "breakpoint_table_sha256": "ee5709eb5b7c9beb1c9ba8182a4e7032e71963aaca30e618b9f76dc53f6bab73",
+    "breakpoint_rules": "data/reference/EUCAST_v16.1_rules.csv",
+    "breakpoint_rules_status": "NOT_APPROVED_INDEPENDENT_REVIEW_REQUIRED"
+  },
+  "inputs": {
+    "ncbi_ast_export": "data/source/ncbi_ast_snapshot/ncbi_ast.csv",
+    "ncbi_isolates_export": "data/source/ncbi_ast_snapshot/ncbi_isolates.csv",
+    "ncbi_isolate_enrichment": "data/source/ncbi_isolate_enrichment/20260821T012604Z-v1/ncbi_isolate_enrichment.csv",
+    "ncbi_isolate_enrichment_manifest": "data/source/ncbi_isolate_enrichment/20260821T012604Z-v1/ncbi_isolate_enrichment_manifest.json",
+    "breakpoint_rules": "data/reference/EUCAST_v16.1_rules.csv",
+    "breakpoint_artifact": "data/reference/EUCAST_v16.1_Breakpoint_Tables.xlsx",
+    "isolate_metadata": "data/curated/isolate_metadata.csv"
+  },
+  "outputs": {
+    "normalized_ast": "data/interim/ncbi_ast_normalized.csv",
+    "ast_exclusions": "data/interim/ncbi_ast_exclusions.csv",
+    "ast_manifest": "data/interim/ncbi_ast_manifest.json",
+    "interpreted_ast": "data/interim/ast_interpreted.csv",
+    "breakpoint_exclusions": "data/interim/breakpoint_exclusions.csv",
+    "breakpoint_manifest": "data/interim/breakpoint_manifest.json",
+    "curated_cohort": "data/curated/cohort.csv",
+    "cohort_exclusions": "data/curated/cohort_exclusions.csv",
+    "cohort_manifest": "data/curated/cohort_manifest.json",
+    "cohort_validation": "reports/cohort_validation.json",
+    "split_table": "data/splits/isolate_splits.csv",
+    "split_manifest": "data/splits/split_manifest.json",
+    "prevalence_predictions": "results/predictions/prevalence.csv",
+    "prevalence_manifest": "results/predictions/prevalence_manifest.json",
+    "locked_thresholds": "results/baselines/locked_thresholds.csv",
+    "external_metrics": "results/baselines/external_metrics.csv",
+    "evaluation_manifest": "results/baselines/evaluation_manifest.json"
+  },
+  "splitting": {
+    "folds": 5,
+    "seed": 20260815,
+    "group": "lineage_group",
+    "lineage_definition": "Achtman ST single-locus-variant groups over eligible development STs (amendment 004 revision adopted 2026-09-27); named SLV:ST<n>",
+    "group_amendment": "docs/GROUPING_VARIABLE_AMENDMENT.md",
+    "lineage_adequacy": {
+      "adopted": "2026-09-27, before any cohort-level MLST output was read",
+      "applies_to": "development genomes eligible for modelling, per population (human_clinical, all_sources)",
+      "resolved_mlst_status": [
+        "PERFECT",
+        "OKAY"
+      ],
+      "min_typing_coverage": 0.95,
+      "max_largest_lineage_fraction": 0.4,
+      "min_inverse_simpson": 10
+    },
+    "leakage_control_group": "genomic_cluster",
+    "grouping_sensitivity_analysis": [
+      "lineage_group",
+      "phylogroup",
+      "genomic_cluster"
+    ],
+    "external_membership": "prespecified in curated cohort and never selected by model performance"
+  },
+  "evaluation": {
+    "intermediate_policy": "exclude_with_flow_report",
+    "minimum_validation_sensitivity": 0.9,
+    "cluster_bootstrap_iterations": 2000,
+    "bootstrap_unit": "lineage_group",
+    "deduplication_amendment": "docs/DEDUPLICATION_POLICY.md",
+    "seed": 20260815,
+    "mic_specification": "docs/MIC_EVALUATION_SPEC.md",
+    "dominant_lineage": "SLV:ST131",
+    "design_amendment": "docs/EVALUATION_DESIGN_AMENDMENT.md",
+    "cross_validation": "nested: outer lineage-grouped folds report; all selection inside inner grouped folds"
+  },
+  "genomics": {
+    "enabled": true,
+    "root": "data/genomics",
+    "results_root": "results/genomics",
+    "reference_root": "data/reference/genomics",
+    "amrfinder_database_version": "2026-08-07.1",
+    "amrfinder_tool_version": "4.2.7",
+    "amrfinder_pinned_by": "probe job 64689133 on 2026-09-21; genomics_freeze_amrfinder_database fails closed if the downloaded release differs",
+    "mlst": {
+      "scheme": "ecoli_achtman_4",
+      "loci": [
+        "adk",
+        "fumC",
+        "gyrB",
+        "icd",
+        "mdh",
+        "purA",
+        "recA"
+      ],
+      "tool_version": "2.35.0",
+      "note": "Achtman 7-locus scheme (amendment 004). In mlst >= 2.23 the name 'ecoli' is the Pasteur scheme (dinB, icdA, pabB, polB, putP, trpA, trpB, uidA); genome-analysis array 64927454 used it in error, voiding cohort-build 64927962."
+    },
+    "assembly_qc": {
+      "min_total_length": 4000000,
+      "max_total_length": 6500000,
+      "max_contigs": 500,
+      "min_n50": 20000,
+      "max_ns_per_100kb": 1000.0
+    }
+  },
+  "unity": {
+    "login_alias": "<configured-ssh-alias>",
+    "work_root": "${AMR_WORK_ROOT}",
+    "project_root": "${AMR_PROJECT_ROOT}",
+    "default_cpu_partition": "cpu",
+    "short_cpu_partition": "cpu-preempt",
+    "gpu_partition": "gpu",
+    "short_gpu_partition": "gpu-preempt"
+  }
+}

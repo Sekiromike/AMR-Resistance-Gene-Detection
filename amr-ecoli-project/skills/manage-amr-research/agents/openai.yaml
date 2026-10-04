@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage AMR Research"
+  short_description: "Govern the rigorous AMR research program"
+  default_prompt: "Use $manage-amr-research to inspect project state and execute the next scientifically valid milestone."

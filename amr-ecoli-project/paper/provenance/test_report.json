@@ -1,0 +1,7 @@
+{
+  "command": "uv run --no-project --with-requirements paper/verify-requirements.txt --with xgboost==2.1.4 --with pyyaml python -m unittest discover -s tests -q",
+  "tests": 406,
+  "status": "PASS",
+  "date": "2026-10-03",
+  "scope": "Existing repository software tests; distinct from scientific prediction verification."
+}

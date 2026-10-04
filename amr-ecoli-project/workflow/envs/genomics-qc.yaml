@@ -1,0 +1,14 @@
+# quast pulls a python_abi and zlib stack that conflicts with mlst's perl
+# stack, so assembly QC gets its own environment. See docs/UNITY_HPC.md.
+name: amr-genomics-qc
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # quast 5.3.0 imports distutils, which Python 3.12 removed; the unpinned
+  # solve picked 3.13 and quast.py failed on start (Unity job 64925569).
+  - python=3.11
+  - quast=5.3.0
+  - ncbi-datasets-cli=18.29.1
+  - unzip=6.0
+  - coreutils=9.5

@@ -1,0 +1,13 @@
+# Modelling environment: the controller stack plus XGBoost, whose survival:aft
+# objective fits interval-censored targets natively. Kept separate so the
+# validated controller environment is not changed.
+name: amr-models
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.9
+  - numpy=2.4.2
+  - pandas=2.3.3
+  - scipy=1.17.1
+  - scikit-learn=1.8.0
+  - py-xgboost-cpu>=2.1,<4

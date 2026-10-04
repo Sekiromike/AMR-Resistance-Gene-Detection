@@ -1,0 +1,29 @@
+@page {
+  size: A4;
+  margin: 21mm 22mm 22mm;
+  @bottom-center { content: counter(page); font-family: serif; font-size: 9pt; }
+}
+html { font-family: "DejaVu Serif", serif; font-size: 10.5pt; color: #161616; }
+body { line-height: 1.42; margin: 0; }
+header { text-align: center; margin-bottom: 1.5em; }
+h1.title { font-size: 19pt; line-height: 1.18; }
+.author, .date { font-size: 10pt; }
+.abstract { font-size: 10pt; text-align: left; margin: 1.5em 0; }
+.abstract-title { font-weight: bold; text-align: center; }
+h1 { font-size: 15pt; margin: 1.3em 0 .5em; }
+h2 { font-size: 12pt; margin: 1.1em 0 .35em; }
+h1, h2, h3 { break-after: avoid; }
+p { margin: .55em 0; orphans: 3; widows: 3; }
+figure { margin: 1.2em 0; break-inside: avoid; }
+img { max-width: 100%; height: auto; display: block; margin: auto; }
+figcaption { font-size: 9pt; line-height: 1.35; margin-top: .6em; text-align: left; }
+table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0; }
+th { border-top: 1.2pt solid #222; border-bottom: .7pt solid #777; }
+td, th { padding: 5pt 4pt; vertical-align: top; }
+tbody tr:last-child td { border-bottom: 1.2pt solid #222; }
+tr { break-inside: avoid; }
+thead { display: table-header-group; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.5pt; overflow-wrap: anywhere; }
+a { color: #174f78; text-decoration: none; overflow-wrap: anywhere; }
+.references { font-size: 9pt; }
+.csl-entry { margin-bottom: .7em; }

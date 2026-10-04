@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run AMR on Unity"
+  short_description: "Operate reproducible AMR workflows on Unity"
+  default_prompt: "Use $run-amr-unity to stage, submit, monitor, and verify this project on Unity HPC."

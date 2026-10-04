@@ -1,0 +1,4 @@
+population,isolates,gentamicin,ciprofloxacin,ceftriaxone,source
+all_source_development,10015,9514,8493,7097,results/cohort/64948707/research_cohort.csv
+human_clinical_development,3849,3348,3809,2822,results/cohort/64948707/research_cohort.csv
+external,1505,1505,1505,1505,results/cohort/64948707/research_cohort.csv

@@ -1,0 +1,19 @@
+executor: slurm
+jobs: 100
+latency-wait: 120
+rerun-incomplete: true
+printshellcmds: true
+show-failed-logs: true
+software-deployment-method:
+  - conda
+default-resources:
+  mem_mb: 4096
+  runtime: 60
+  slurm_partition: cpu
+set-resources:
+  normalize_ncbi_ast:
+    mem_mb: 8000
+    runtime: 60
+  evaluate_prevalence_baseline:
+    mem_mb: 8000
+    runtime: 120
