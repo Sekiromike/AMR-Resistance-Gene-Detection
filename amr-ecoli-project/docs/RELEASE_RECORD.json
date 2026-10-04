@@ -1,21 +1,81 @@
 {
+  "id": 402802303,
   "tag_name": "v1.0.0",
   "html_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/tag/v1.0.0",
-  "status": "Refreshing code and paper packages after the owner-requested repository cleanup. Numerical result and embedding archives remain unchanged.",
-  "unchanged_scientific_assets": [
+  "published_at": "2026-10-04T21:14:00Z",
+  "target_commitish": "7d6f44651fb71fed8eed3ed85d5ab2f931fb3b7a",
+  "draft": false,
+  "prerelease": false,
+  "assets": [
     {
-      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-embeddings-v1.0.0.tar.gz",
-      "digest": "sha256:9e8a347c87a7d40eacda1438704f31ff43fbe576ee258f936002fe4fe48099a5",
       "name": "amr-embeddings-v1.0.0.tar.gz",
       "size": 1455914306,
-      "state": "uploaded"
+      "digest": "sha256:9e8a347c87a7d40eacda1438704f31ff43fbe576ee258f936002fe4fe48099a5",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-embeddings-v1.0.0.tar.gz"
     },
     {
-      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-results-v1.0.0.tar.gz",
-      "digest": "sha256:31e2e72525959aec48e5a5e78475302433b3551f28c52515027ad521f3552096",
       "name": "amr-results-v1.0.0.tar.gz",
       "size": 238385121,
-      "state": "uploaded"
+      "digest": "sha256:31e2e72525959aec48e5a5e78475302433b3551f28c52515027ad521f3552096",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/amr-results-v1.0.0.tar.gz"
+    },
+    {
+      "name": "arxiv-source-v1.0.0.tar.gz",
+      "size": 71069,
+      "digest": "sha256:f32bf3c0d4c75b5be61a9cd8a29fc8030236edd3d5ba19516136f9e9e453ddb0",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/arxiv-source-v1.0.0.tar.gz"
+    },
+    {
+      "name": "manuscript.pdf",
+      "size": 139931,
+      "digest": "sha256:fc778779641ce95380036d215de494ec4e059f3abb228bb156019b6176b9ee51",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/manuscript.pdf"
+    },
+    {
+      "name": "paper-and-tables-v1.0.0.tar.gz",
+      "size": 805548,
+      "digest": "sha256:0963d298b5efdb108c9a01100c7d2399792c86d9e90e3fabf169e0d1639bfc96",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/paper-and-tables-v1.0.0.tar.gz"
+    },
+    {
+      "name": "research-code-v1.0.0.tar.gz",
+      "size": 1470690,
+      "digest": "sha256:bac1d9f75d04aa6ec674674849894f8a8bd283c94a965354ef5d421f658ea032",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/research-code-v1.0.0.tar.gz"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 633,
+      "digest": "sha256:430b5e10834dba9e58f4b58dba36810328e5bfca03151dfdbf7509d1b61d50d0",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/SHA256SUMS"
+    },
+    {
+      "name": "supplement.pdf",
+      "size": 45788,
+      "digest": "sha256:ce29659859587286ffdfdf63c6b1e401eca28b009b632ecee49e688648b6dd80",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Sekiromike/AMR-Resistance-Gene-Detection/releases/download/v1.0.0/supplement.pdf"
     }
-  ]
+  ],
+  "verification": "All eight asset SHA256 values and byte sizes matched local files before and after republishing. Result and embedding archives remain byte-for-byte unchanged.",
+  "source_archive_files": 259,
+  "history_cleanup": {
+    "date": "2026-10-04",
+    "clean_root_commit": "7d6f44651fb71fed8eed3ed85d5ab2f931fb3b7a",
+    "published_refs": {
+      "refs/heads/main": "7d6f44651fb71fed8eed3ed85d5ab2f931fb3b7a",
+      "refs/tags/v1.0.0": "7d6f44651fb71fed8eed3ed85d5ab2f931fb3b7a"
+    },
+    "local_old_objects_pruned": true,
+    "protected_scientific_files_unchanged": 163,
+    "study_chronology": "paper/provenance/study_chronology.json",
+    "boundary": "Old history is unreachable from repository branches and tags. This does not assert deletion from GitHub caches, forks, or other clones."
+  }
 }

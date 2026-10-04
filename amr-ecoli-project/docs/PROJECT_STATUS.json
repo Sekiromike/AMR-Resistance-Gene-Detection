@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "objective": "Report and release the completed comparison of curated AMR allele/family features and frozen Evo 2 locus embeddings for interval-censored E. coli MIC prediction. Preserve the locked external, exploratory external, and development-withholding evidence boundaries.",
-  "updated_at_utc": "2026-10-04T17:40:20.827101+00:00",
+  "updated_at_utc": "2026-10-04T21:15:07.532444+00:00",
   "current_phase": "manuscript_release",
   "evidence_tier": "LOCKED_EXTERNAL (original comparison); DEVELOPMENT_ONLY (variant withholding); exploratory external family follow-up",
   "phases": [
@@ -406,7 +406,7 @@
     {
       "id": "manuscript_release",
       "title": "Manuscript and reproducibility release",
-      "status": "in_progress",
+      "status": "complete",
       "exit_criteria": [
         "Original results and prediction locks verified, with complete comparison tables.",
         "Confirmed author details and AI disclosure included; LaTeX manuscript and supplement compile.",
@@ -415,7 +415,7 @@
         "The published main branch, release tag, and downloadable source packages contain only the current study; superseded Git histories are unreachable from repository refs."
       ],
       "blockers": [],
-      "next_action": "Complete the owner-requested cleanup: remove obsolete documents, replace Git history with the current study on main, refresh the code/paper release archives, and verify all retained scientific artifacts and published references.",
+      "next_action": "Rushath Rajeev reviews the scientific text and AI disclosure, then uploads the prepared source package to arXiv, selects the article license, and checks the arXiv-generated PDF. No additional experiment is required for the completed manuscript; confirmation of post-hoc family performance would require a new untouched cohort.",
       "evidence": [
         {
           "at_utc": "2026-10-03T21:55:21.958218+00:00",
@@ -424,6 +424,10 @@
         {
           "at_utc": "2026-10-03T22:10:21.027507+00:00",
           "detail": "Numerical verification of the extracted public archives PASS (paper/provenance/public_archive_verification.json): 54 evaluations, 438 comparisons, 192 source exclusions, 18 locks and 388 recorded hashes; no missing targets. The 13-page manuscript and 7-page supplement compile with Tectonic 0.17.0; three figures and nine result tables are included. All 406 repository tests pass. Author metadata, AI disclosure and MIT licensing are confirmed."
+        },
+        {
+          "at_utc": "2026-10-04T21:15:07.532444+00:00",
+          "detail": "Owner-requested repository cleanup verified: main and release v1.0.0 now start at clean root 7d6f44651fb71fed8eed3ed85d5ab2f931fb3b7a; the superseded research branch and old local Git objects/reflogs were removed. Five obsolete documents removed, broad study overview consolidated to the executed MIC study, and obsolete ledger phase/fields removed. All 163 protected scientific source/configuration/result files are unchanged. Six current-study protocol and lock snapshots with original hashes and local dates are preserved in paper/provenance/study_chronology.json. All 259 source archive files match the clean commit; all eight GitHub asset digests and sizes match local packages. Frozen result/embedding archives are unchanged. Actual manuscript/supplement LaTeX recompiles (13/7 pages); paper source/table/hash checks PASS. Publication and remote-ref evidence: docs/RELEASE_RECORD.json. No arXiv submission performed."
         }
       ]
     }
